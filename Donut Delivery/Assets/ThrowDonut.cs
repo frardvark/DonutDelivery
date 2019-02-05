@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class ThrowDonut : MonoBehaviour
 {
     public GameObject player;
@@ -15,6 +16,8 @@ public class ThrowDonut : MonoBehaviour
     {
         canFire = true;
         checkCD = cooldown;
+
+        house = GetComponent<Navigation>().targetHouse; 
     }
 
     // Update is called once per frame
