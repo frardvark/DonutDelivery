@@ -21,6 +21,15 @@ public class Timer : MonoBehaviour
     void Update()
     {
         checkTime -= Time.deltaTime;
+
+        //Text will change to yellow when timer < 50% and to red when timer < 25%
+        if (checkTime <= (TimeLimit * 0.5f) && checkTime > (TimeLimit * 0.25f))
+            timerText.color = Color.yellow;
+        
+        if (checkTime <= (TimeLimit * 0.25f))
+            timerText.color = Color.red;
+        
+
         if (checkTime <= 0.00f)
             stop = true;
         
