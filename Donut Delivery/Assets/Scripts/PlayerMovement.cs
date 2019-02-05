@@ -6,12 +6,18 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     Rigidbody rb;
+    Rigidbody childrb;
     float speed;
+    float torque;
+    GameObject childCube;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        speed = 1.0f;
+        speed = 400.0f;
+        torque = 0.05f;
+        //GameObject childCube = this.gameObject.transform.GetChild(1).gameObject;
+        //childrb = childCube.GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -19,6 +25,15 @@ public class PlayerMovement : MonoBehaviour
     {
         float horizontalAxis = Input.GetAxis("Horizontal");
         float verticalAxis = Input.GetAxis("Vertical");
-        rb.AddForce(new Vector3(horizontalAxis * speed, 0f, verticalAxis * speed), ForceMode.Impulse);
+        if (verticalAxis != 0){
+            //rb.AddForce(transform.forward * verticalAxis * speed);
+            Debug.Log("Adding force");
+            rb.AddForce(new Vector3(transform.forward.x * verticalAxis * speed, transform.forward.y * verticalAxis * speed, transform.forward.z * verticalAxis * speed));
+        }
+        //childrb.AddForce(new Vector3(horizontalAxis * torque, 0f, 0f));
+        if (horizontalAxis != 0){
+            transform.Rotate(0, horizontalAxis, 0);
+        }
+        Debug.Log(transform.forward.x);
     }
 }
