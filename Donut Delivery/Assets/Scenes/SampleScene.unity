@@ -544,8 +544,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  m_RaycastTarget: 1
+  m_Color: {r: 0.0047169924, g: 1, b: 0.019935602, a: 1}
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -585,7 +585,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57faa6a039b1bf847a2a577081cf8e74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimeLimit: 120
+  TimeLimit: 30
   timerText: {fileID: 1081963497}
 --- !u!1 &1146474761
 GameObject:
