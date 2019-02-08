@@ -43,6 +43,7 @@ public class ThrowDonut : MonoBehaviour
         float y = position.y;
         float z = position.z;
         GameObject donut = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+        donut.AddComponent<Collide>();
         Rigidbody donut_rb = donut.AddComponent<Rigidbody>();
         donut.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
         donut.transform.position = new Vector3(x, y + 2, z);
