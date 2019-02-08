@@ -25,6 +25,6 @@ public class Arrow : MonoBehaviour
         // transform.position.y = GameObject.Find("Truck").transform.position.y + 1f;
         // transform.position.z = GameObject.Find("Truck").transform.position.z + 1f;
 
-        transform.position = new Vector3(truck.transform.position.x, truck.transform.position.y + 1, truck.transform.position.z + 1);
+        //transform.position = new Vector3(truck.transform.position.x, truck.transform.position.y + 1, truck.transform.position.z + 1);
     }
 }

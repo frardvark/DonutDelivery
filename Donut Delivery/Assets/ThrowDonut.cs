@@ -50,6 +50,18 @@ public class ThrowDonut : MonoBehaviour
        
     }
 
+    void OnTriggerExit(Collider col)
+    {
+        //Transform transform = house.transform;
+        Debug.Log(col.gameObject.name);
+
+        if (col.gameObject.name == house.transform.GetChild(0).name)
+        {
+            canFire = false;
+        }
+
+    }
+
     //create new object just above truck and throws it at the house
     void FireDonut()
     {
