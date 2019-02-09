@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
     {
         float horizontalAxis = Input.GetAxis("Horizontal");
         float verticalAxis = Input.GetAxis("Vertical");
-        if (verticalAxis != 0){
+        if (verticalAxis != 0 && rb.velocity.magnitude <= 10){
             //rb.AddForce(transform.forward * verticalAxis * speed);
             //Debug.Log("Adding force");
             rb.AddForce(new Vector3(transform.forward.x * verticalAxis * speed, transform.forward.y * verticalAxis * speed, transform.forward.z * verticalAxis * speed));

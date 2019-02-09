@@ -38,3 +38,5 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+Donut Delivery/Packages/manifest.json
+Donut Delivery/ProjectSettings/ProjectVersion.txt
