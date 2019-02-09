@@ -11,14 +11,18 @@ public class Navigation : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+       
+    }
+
+    private void OnEnable()
+    {
         deliveryTargets = GameObject.FindGameObjectsWithTag("DeliveryTarget");
 
-        if (deliveryTargets != null)
+        if (deliveryTargets != null && deliveryTargets.Length > 0)
             targetHouse = deliveryTargets[Random.Range(0, deliveryTargets.Length - 1)];
 
-       
-            targetHouse.GetComponent<Renderer>().material.color = Color.green;
-    
+
+        targetHouse.GetComponent<Renderer>().material.color = Color.green;
     }
 
 

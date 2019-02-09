@@ -19,7 +19,7 @@ public class ThrowDonut : MonoBehaviour
         house = GetComponent<Navigation>().targetHouse;
         checkCD = cooldown;
         arrow = GameObject.Find("Arrow");
-
+        
     }
 
     // Update is called once per frame
