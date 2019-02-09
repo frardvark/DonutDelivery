@@ -2,14 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class CarControl : MonoBehaviour
 {
     public float Motorforce, Steerforce, BrakeForce;
     public WheelCollider FL_Wheel, FR_Wheel, BL_Wheel, BR_Wheel;
+    Vector3 com;
+    Rigidbody rb;
     // Start is called before the first frame update
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody>();
+        com = new Vector3(transform.position.x, transform.position.y - 0.2f, transform.position.z);
+        //rb.centerOfMass = com;
     }
 
     // Update is called once per frame
