@@ -35,7 +35,7 @@ public class Timer : MonoBehaviour
         if (checkTime <= 0.00f)
         {
             stop = true;
-            message.text = "Time's Up! Try Again? Press Space";
+            message.text = "Time's Up! Try Again? \n       Press Space";
 
             //press spacebar to restart level
             if (Input.GetKey(KeyCode.Space))

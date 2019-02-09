@@ -7,6 +7,7 @@ public class ThrowDonut : MonoBehaviour
 {
     public GameObject player;
     public GameObject house;
+    public GameObject arrow;
     private bool canFire;
     public float cooldown = 0.5f; //donut firing cooldown
     private float checkCD;
@@ -17,6 +18,7 @@ public class ThrowDonut : MonoBehaviour
         //canFire = true;
         house = GetComponent<Navigation>().targetHouse;
         checkCD = cooldown;
+        arrow = GameObject.Find("Arrow");
 
     }
 
@@ -46,6 +48,7 @@ public class ThrowDonut : MonoBehaviour
             if (col.gameObject.name == house.transform.GetChild(0).name)
             {
                 canFire = true;
+                arrow.GetComponent<Renderer>().material.color = Color.green;
             }
        
     }
@@ -58,6 +61,7 @@ public class ThrowDonut : MonoBehaviour
         if (col.gameObject.name == house.transform.GetChild(0).name)
         {
             canFire = false;
+            arrow.GetComponent<Renderer>().material.color = Color.white;
         }
 
     }
