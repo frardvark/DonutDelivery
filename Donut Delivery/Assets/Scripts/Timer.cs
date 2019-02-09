@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
@@ -8,6 +9,7 @@ public class Timer : MonoBehaviour
     public float TimeLimit = 10f;
     private float checkTime;
     public Text timerText;
+    public Text message;
     private bool stop;
 
     // Start is called before the first frame update
@@ -31,7 +33,15 @@ public class Timer : MonoBehaviour
         
 
         if (checkTime <= 0.00f)
+        {
             stop = true;
+            message.text = "Time's Up! Try Again? Press Space";
+
+            //press spacebar to restart level
+            if (Input.GetKey(KeyCode.Space))
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+            
         
         if (!stop)
             timerText.text = "Time Left: " + checkTime.ToString("n2") + " seconds";

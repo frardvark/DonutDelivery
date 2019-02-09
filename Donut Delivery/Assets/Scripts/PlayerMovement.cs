@@ -27,13 +27,13 @@ public class PlayerMovement : MonoBehaviour
         float verticalAxis = Input.GetAxis("Vertical");
         if (verticalAxis != 0){
             //rb.AddForce(transform.forward * verticalAxis * speed);
-            Debug.Log("Adding force");
+            //Debug.Log("Adding force");
             rb.AddForce(new Vector3(transform.forward.x * verticalAxis * speed, transform.forward.y * verticalAxis * speed, transform.forward.z * verticalAxis * speed));
         }
         //childrb.AddForce(new Vector3(horizontalAxis * torque, 0f, 0f));
         if (horizontalAxis != 0){
             transform.Rotate(0, horizontalAxis, 0);
         }
-        Debug.Log(transform.forward.x);
+        //Debug.Log(transform.forward.x);
     }
 }
