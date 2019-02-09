@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class ThrowDonut : MonoBehaviour
 {
     public GameObject player;
@@ -13,8 +14,10 @@ public class ThrowDonut : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        canFire = true;
+        //canFire = true;
+        house = GetComponent<Navigation>().targetHouse;
         checkCD = cooldown;
+
     }
 
     // Update is called once per frame
@@ -22,16 +25,41 @@ public class ThrowDonut : MonoBehaviour
     {
         //keeps track of cooldown
         checkCD -= Time.deltaTime;
+        house = GetComponent<Navigation>().targetHouse;
 
         //when cooldown finished, canFire = true
         if (checkCD <= 0.0f)
-            canFire = true;
+            //canFire = true;
 
         //Fire donut with 'E' key
         if (Input.GetKey(KeyCode.E) && canFire)
         {
             FireDonut();
         }
+    }
+
+    void OnTriggerEnter(Collider col)
+    {
+        //Transform transform = house.transform;
+        Debug.Log(col.gameObject.name);
+        
+            if (col.gameObject.name == house.transform.GetChild(0).name)
+            {
+                canFire = true;
+            }
+       
+    }
+
+    void OnTriggerExit(Collider col)
+    {
+        //Transform transform = house.transform;
+        Debug.Log(col.gameObject.name);
+
+        if (col.gameObject.name == house.transform.GetChild(0).name)
+        {
+            canFire = false;
+        }
+
     }
 
     //create new object just above truck and throws it at the house
