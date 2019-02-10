@@ -42,8 +42,6 @@ public class ThrowDonut : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
-        //Transform transform = house.transform;
-        Debug.Log(col.gameObject.name);
         
             if (col.gameObject.name == house.transform.GetChild(0).name)
             {
@@ -55,8 +53,6 @@ public class ThrowDonut : MonoBehaviour
 
     void OnTriggerExit(Collider col)
     {
-        //Transform transform = house.transform;
-        Debug.Log(col.gameObject.name);
 
         if (col.gameObject.name == house.transform.GetChild(0).name)
         {
