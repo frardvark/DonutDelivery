@@ -8,8 +8,10 @@ public class Timer : MonoBehaviour
 {
     public float TimeLimit = 10f;
     private float checkTime;
+    public int houses;
     public Text timerText;
     public Text message;
+    public Text counter;
     private bool stop;
 
     // Start is called before the first frame update
@@ -17,11 +19,14 @@ public class Timer : MonoBehaviour
     {
         checkTime = TimeLimit;
         stop = false;
+        houses = 0;
+        counter.text = "Donuts Delivered: " + houses;
     }
 
     // Update is called once per frame
     void Update()
     {
+        counter.text = "Donuts Delivered: " + houses;
         checkTime -= Time.deltaTime;
 
         //Text will change to yellow when timer < 50% and to red when timer < 20%

@@ -6,12 +6,13 @@ public class Navigation : MonoBehaviour
 {
     //public GameObject respawnPrefab;
     public GameObject[] deliveryTargets;
-    public GameObject targetHouse; 
+    public GameObject targetHouse;
+    public GameObject counter;
 
     // Start is called before the first frame update
     void Start()
     {
-       
+        
     }
 
     private void OnEnable()
@@ -23,6 +24,8 @@ public class Navigation : MonoBehaviour
 
 
         targetHouse.GetComponent<Renderer>().material.color = Color.green;
+        counter = GameObject.Find("Timer");
+        counter.GetComponent<Timer>().houses++;
     }
 
 

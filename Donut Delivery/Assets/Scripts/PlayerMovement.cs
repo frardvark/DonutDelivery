@@ -38,9 +38,10 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator HitObstacle()
     {
-        speed -= 200;
-        yield return new WaitForSeconds(1);
-        speed += 200;
+        float penalty = speed / 2;
+        speed -= penalty;
+        yield return new WaitForSeconds(5);
+        speed += penalty;
         
     }
 }
