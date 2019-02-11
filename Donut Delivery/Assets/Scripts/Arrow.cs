@@ -13,6 +13,7 @@ public class Arrow : MonoBehaviour
     {
         
         truck = GameObject.Find("Truck");
+        GetComponent<Renderer>().material.color = Color.white;
 
     }
 

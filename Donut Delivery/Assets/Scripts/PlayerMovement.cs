@@ -40,7 +40,7 @@ public class PlayerMovement : MonoBehaviour
     {
         float penalty = speed / 2;
         speed -= penalty;
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(3);
         speed += penalty;
         
     }

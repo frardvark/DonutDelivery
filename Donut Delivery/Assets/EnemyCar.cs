@@ -22,7 +22,7 @@ public class EnemyCar : MonoBehaviour
     void Update()
     {
         transform.Translate(velocity);
-        Debug.Log(velocity);
+        //Debug.Log(velocity);
     }
 
     private void OnTriggerEnter(Collider collider)
