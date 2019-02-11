@@ -35,4 +35,12 @@ public class PlayerMovement : MonoBehaviour
         }
         //Debug.Log(transform.forward.x);
     }
+
+    IEnumerator HitObstacle()
+    {
+        speed -= 200;
+        yield return new WaitForSeconds(1);
+        speed += 200;
+        
+    }
 }
