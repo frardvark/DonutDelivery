@@ -32,7 +32,11 @@ public class Timer : MonoBehaviour
     void Update()
     {
         counter.text = "Donuts Delivered: " + houses;
-        checkTime -= Time.deltaTime;
+        if (!stop)
+        {
+            checkTime -= Time.deltaTime;
+        }
+            
 
         if (houses == totalHouses && !lost)
         {
